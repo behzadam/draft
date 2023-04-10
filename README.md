@@ -1,2 +1,2 @@
-# nexcestor
-Next.js Application Architecture
+# Nexcestor
+Next.js Application Architecture ( coming soon )
