@@ -1,4 +1,4 @@
-# Nextcestor
+# Prototype
 Next.js Application Architecture ( coming soon )
 
 ### Aplication
