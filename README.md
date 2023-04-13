@@ -1,4 +1,4 @@
-# Prototype
+# Motifs
 Next.js Application Architecture ( coming soon )
 
 ### Aplication
