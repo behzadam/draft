@@ -1,4 +1,4 @@
-# Motifs
+# Draft
 Next.js Application Architecture ( coming soon )
 
 ### Aplication
@@ -13,4 +13,4 @@ Next.js Application Architecture ( coming soon )
 - Lint-staged
 - Prettier
 - Eslint
-- Editor Config
+- Editor settings
