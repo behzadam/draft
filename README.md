@@ -1,7 +1,9 @@
 # Draft
+
 Next.js Application Architecture ( coming soon )
 
-### Aplication
+## Aplication
+
 - Feature-Driven Architecture
 - Next.js 13 | Typescript
 - Storybook
