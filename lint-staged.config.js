@@ -1,3 +1,7 @@
 module.exports = {
-  '*.{ts,tsx}': ['pnpm run lint', 'pnpm run format:check']
+  '*.{ts,tsx}': [
+    'pnpm lint',
+    'pnpm format:check',
+    "bash -c 'pnpm types:check'"
+  ]
 };
