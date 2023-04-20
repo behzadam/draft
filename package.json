@@ -49,5 +49,8 @@
     "msw": "^1.2.1",
     "prettier": "^2.8.7",
     "storybook": "^7.0.6"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
