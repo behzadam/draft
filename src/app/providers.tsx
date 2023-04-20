@@ -3,13 +3,14 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ReactNode } from 'react';
 
-export const AppProvider = ({
-  children
-}: {
+type Props = {
   children: ReactNode;
-}) => {
-  <QueryClientProvider client={queryClient}>
-    <ReactQueryDevtools initialIsOpen={false} />
-    {children}
-  </QueryClientProvider>;
+};
+export const AppProvider = ({ children }: Props) => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
+      {children}
+    </QueryClientProvider>
+  );
 };
