@@ -9,6 +9,7 @@
     "lint": "next lint",
     "format:check": "prettier --check \"**/*.+(json|ts|tsx)\"",
     "format:fix": "prettier --write \"**/*.+(json|ts|tsx)\"",
+    "types:check": "tsc --noEmit --pretty",
     "prepare": "husky install"
   },
   "dependencies": {
