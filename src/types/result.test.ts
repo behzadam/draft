@@ -1,4 +1,5 @@
 import { posts } from '@/testing/mocks/data';
+import { Pagination } from './pagination';
 import { Response } from './response';
 import {
   MESSAGE_FAILURE,
@@ -42,6 +43,33 @@ describe('Result', () => {
         success: true,
         data: null,
         meta: null
+      } satisfies Response);
+    });
+
+    it('returns response with pagination meta data', () => {
+      const pagination = new Pagination({
+        itemCount: 1,
+        page: 1,
+        take: 10
+      });
+      const result = Result.success({
+        data: posts,
+        meta: pagination
+      });
+      console.log(result);
+      expect(result).toEqual({
+        errors: [],
+        message: MESSAGE_SUCCESS,
+        success: true,
+        data: posts,
+        meta: {
+          page: pagination.page,
+          take: pagination.take,
+          itemCount: pagination.itemCount,
+          pageCount: pagination.pageCount,
+          hasNextPage: false,
+          hasPreviousPage: false
+        } satisfies Pagination
       } satisfies Response);
     });
   });
