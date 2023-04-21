@@ -56,7 +56,6 @@ describe('Result', () => {
         data: posts,
         meta: pagination
       });
-      console.log(result);
       expect(result).toEqual({
         errors: [],
         message: MESSAGE_SUCCESS,
