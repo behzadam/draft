@@ -5,6 +5,9 @@ export const MESSAGE_SUCCESS =
   'The operation has been done successfully.';
 export const MESSAGE_FAILURE = 'Invalid operation!';
 
+/**
+ * Result class to simplify the response handling.
+ */
 export class Result<TData = unknown> {
   success: boolean;
   message?: string;
@@ -32,6 +35,26 @@ export class Result<TData = unknown> {
     this.meta = meta;
   }
 
+  /**
+   * Returns failure result.
+   * @param options
+   * @returns Result
+   *
+   * @example
+   * Here's a simple example:
+   * ```ts
+   * const result = Result.failure();
+   * console.log(result)
+   * // Prints:
+   * {
+   *    errors: [],
+   *    message: MESSAGE_FAILURE,
+   *    success: false,
+   *    data: null,
+   *    meta: null
+   * }
+   *```
+   */
   static failure(
     options?: Partial<{
       message?: string;
@@ -47,6 +70,27 @@ export class Result<TData = unknown> {
     });
   }
 
+  /**
+   * Returns success result.
+   * @param options Optional params
+   * @returns Result
+   *
+   * @example
+   * Here's a simple example:
+   *
+   * ```ts
+   * const result = Result.success({ data: [{ id: 1}] });
+   * console.log(result);
+   * // Prints:
+   * {
+   *  errors: [],
+   *  message: MESSAGE_SUCCESS,
+   *  success: true,
+   *  data: [{ id: 1}],
+   *  meta: null
+   * }
+   * ```
+   */
   static success<TData>(options?: {
     data: TData;
     message?: string;
