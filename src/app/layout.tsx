@@ -1,5 +1,7 @@
+import { AppProviders } from '@/app/providers';
+import { API_MOCKING } from '@/config/constants';
+import { MSWWrapper } from '@/lib/msw-wrapper';
 import './globals.css';
-import { AppProvider } from './providers';
 
 export const metadata = {
   title: 'Draft | Next.js Application Architecture',
@@ -15,7 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AppProvider>{children}</AppProvider>
+        {API_MOCKING ? (
+          <MSWWrapper>
+            {' '}
+            <AppProviders>{children}</AppProviders>
+          </MSWWrapper>
+        ) : (
+          <AppProviders>{children}</AppProviders>
+        )}
       </body>
     </html>
   );
