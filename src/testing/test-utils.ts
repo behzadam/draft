@@ -1,4 +1,4 @@
-import { AppProvider } from '@/app/providers';
+import { AppProviders } from '@/app/providers';
 import {
   render,
   RenderOptions
@@ -11,7 +11,7 @@ export const customRender = (
   options?: Omit<RenderOptions, 'wrapper'>
 ) => {
   return render(ui, {
-    wrapper: AppProvider,
+    wrapper: AppProviders,
     ...options
   });
 };
