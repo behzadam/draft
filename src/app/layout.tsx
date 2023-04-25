@@ -17,14 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {API_MOCKING ? (
-          <MSWWrapper>
-            {' '}
-            <AppProviders>{children}</AppProviders>
-          </MSWWrapper>
-        ) : (
-          <AppProviders>{children}</AppProviders>
-        )}
+        <AppProviders>
+          {API_MOCKING ? (
+            <MSWWrapper>{children}</MSWWrapper>
+          ) : (
+            children
+          )}
+        </AppProviders>
       </body>
     </html>
   );
