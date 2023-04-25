@@ -1,1 +1,2 @@
-export const handlers = [];
+import { postsHandlers } from './post';
+export const handlers = [...postsHandlers];

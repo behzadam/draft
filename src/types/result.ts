@@ -1,4 +1,3 @@
-import { Response } from './response';
 import { ResponseMeta } from './response-meta';
 
 export const MESSAGE_SUCCESS =
@@ -10,18 +9,24 @@ export const MESSAGE_FAILURE = 'Invalid operation!';
  */
 export class Result<TData = unknown> {
   success: boolean;
-  message?: string;
+  message: string | null;
   errors: string[];
-  data?: TData;
+  data: TData | null;
   meta: ResponseMeta;
 
   private constructor({
     success = false,
-    message,
+    message = null,
     errors = [],
-    data,
+    data = null,
     meta = null
-  }: Partial<Response<TData>> = {}) {
+  }: Partial<{
+    success: boolean;
+    message: string | null;
+    errors: string[];
+    data: TData | null;
+    meta: ResponseMeta;
+  }>) {
     if (!message) {
       message = success
         ? MESSAGE_SUCCESS

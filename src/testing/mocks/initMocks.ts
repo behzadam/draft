@@ -1,5 +1,5 @@
 import { IS_SERVER } from '@/config/constants';
-import { seed } from './seed';
+import { seedMockDb } from './seeder';
 
 const initMocks = () => {
   if (IS_SERVER) {
@@ -7,7 +7,7 @@ const initMocks = () => {
   } else {
     require('./browser');
   }
-  seed();
+  seedMockDb();
 };
 
 initMocks();

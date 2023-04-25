@@ -1,7 +1,7 @@
 import * as fakeData from './data';
 import { db } from './db';
 
-export const seed = () => {
+export const seedMockDb = () => {
   const postCount = db.post.count();
   if (postCount > 0) return;
 

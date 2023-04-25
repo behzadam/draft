@@ -1,6 +1,5 @@
 import { posts } from '@/testing/mocks/data';
 import { Pagination } from './pagination';
-import { Response } from './response';
 import {
   MESSAGE_FAILURE,
   MESSAGE_SUCCESS,
@@ -17,7 +16,7 @@ describe('Result', () => {
         success: true,
         data: posts,
         meta: null
-      } satisfies Response);
+      } satisfies Result);
     });
 
     it('returns response with custom message', () => {
@@ -32,7 +31,7 @@ describe('Result', () => {
         success: true,
         data: posts,
         meta: null
-      } satisfies Response);
+      } satisfies Result);
     });
 
     it('returns response with null data', () => {
@@ -43,7 +42,7 @@ describe('Result', () => {
         success: true,
         data: null,
         meta: null
-      } satisfies Response);
+      } satisfies Result);
     });
 
     it('returns response with pagination meta data', () => {
@@ -69,7 +68,7 @@ describe('Result', () => {
           hasNextPage: false,
           hasPreviousPage: false
         } satisfies Pagination
-      } satisfies Response);
+      } satisfies Result);
     });
   });
 
@@ -82,7 +81,7 @@ describe('Result', () => {
         success: false,
         data: null,
         meta: null
-      } satisfies Response);
+      } satisfies Result);
     });
 
     it('returns response with custom failure message', () => {
@@ -96,7 +95,7 @@ describe('Result', () => {
         success: false,
         data: null,
         meta: null
-      } satisfies Response);
+      } satisfies Result);
     });
 
     it('returns response with array of errors', () => {
@@ -111,7 +110,7 @@ describe('Result', () => {
         success: false,
         data: null,
         meta: null
-      } satisfies Response);
+      } satisfies Result);
     });
   });
 });

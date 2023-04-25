@@ -9,11 +9,17 @@ export type Props = {
 
 export const Link = ({
   href,
+  shallow = false,
   children,
-  shallow = false
+  ...rest
 }: Props) => {
   return (
-    <NextLink shallow={shallow} href={href} passHref>
+    <NextLink
+      shallow={shallow}
+      href={href}
+      passHref
+      {...rest}
+    >
       {children}
     </NextLink>
   );

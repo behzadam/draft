@@ -48,6 +48,9 @@ dependencies:
     version: 5.0.4
 
 devDependencies:
+  '@faker-js/faker':
+    specifier: ^7.6.0
+    version: 7.6.0
   '@mswjs/data':
     specifier: ^0.12.0
     version: 0.12.0(typescript@5.0.4)
@@ -105,6 +108,9 @@ devDependencies:
   msw:
     specifier: ^1.2.1
     version: 1.2.1(typescript@5.0.4)
+  msw-storybook-addon:
+    specifier: ^1.8.0
+    version: 1.8.0(msw@1.2.1)
   prettier:
     specifier: ^2.8.7
     version: 2.8.7
@@ -1713,6 +1719,11 @@ packages:
   /@eslint/js@8.38.0:
     resolution: {integrity: sha512-IoD2MfUnOV58ghIHCiil01PcohxjbYR/qCxsoC+xNgUwh1EY8jOOrYmu3d3a71+tJJ23uscEV4X2HJWMsPJu4g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  /@faker-js/faker@7.6.0:
+    resolution: {integrity: sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==}
+    engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+    dev: true
 
   /@fal-works/esbuild-plugin-global-externals@2.1.2:
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
@@ -8356,6 +8367,15 @@ packages:
 
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
+
+  /msw-storybook-addon@1.8.0(msw@1.2.1):
+    resolution: {integrity: sha512-dw3vZwqjixmiur0vouRSOax7wPSu9Og2Hspy9JZFHf49bZRjwDiLF0Pfn2NXEkGviYJOJiGxS1ejoTiUwoSg4A==}
+    peerDependencies:
+      msw: '>=0.35.0 <2.0.0'
+    dependencies:
+      is-node-process: 1.2.0
+      msw: 1.2.1(typescript@5.0.4)
+    dev: true
 
   /msw@1.2.1(typescript@5.0.4):
     resolution: {integrity: sha512-bF7qWJQSmKn6bwGYVPXOxhexTCGD5oJSZg8yt8IBClxvo3Dx/1W0zqE1nX9BSWmzRsCKWfeGWcB/vpqV6aclpw==}
