@@ -1,4 +1,4 @@
-import { Post } from '../types/post';
+import { Post } from '../../types/post';
 import { PostListItem } from './post-list-item';
 
 type Props = {
