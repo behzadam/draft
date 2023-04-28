@@ -8,7 +8,9 @@ import { handlers } from '../src/testing/mocks/handlers';
 import { seedMockDb } from '../src/testing/mocks/seeder';
 import { withAppProviders } from './decorators';
 
-mswInitialize();
+mswInitialize({
+  onUnhandledRequest: 'bypass'
+});
 seedMockDb();
 
 const preview: Preview = {
