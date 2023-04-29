@@ -14,7 +14,7 @@ export default function Site() {
       {isFetching ? (
         <PostListSkeleton />
       ) : (
-        <PostList posts={result.data} />
+        <PostList posts={result?.data!} />
       )}
     </section>
   );
