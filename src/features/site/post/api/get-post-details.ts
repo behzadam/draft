@@ -1,23 +1,24 @@
+import { API_URL } from '@/config/constants';
 import { apiClient } from '@/lib/api-client';
 import { Result } from '@/types';
 import { useQuery } from '@tanstack/react-query';
-import { Post } from '../types/post';
+import { PostDetailsDto } from '../types/post-details-dto';
 
 export const getPostDetails = (
-  postId: string
-): Promise<Result<Post[]>> => {
-  return apiClient.get(`/posts/${postId}`);
+  slug: string
+): Promise<Result<PostDetailsDto>> => {
+  return apiClient.get(`${API_URL}/posts/${slug}`);
 };
 
-export const useGetPostDetails = (postId: string) => {
-  const { data, isLoading } = useQuery<Result<Post[]>>({
-    queryKey: ['post', postId],
-    queryFn: () => getPostDetails(postId),
-    initialData: () => Result.success({ data: [] })
+export const useGetPostDetails = (slug: string) => {
+  const { data, isFetching } = useQuery({
+    queryKey: ['posts', slug],
+    queryFn: () => getPostDetails(slug),
+    enabled: !!slug
   });
 
   return {
     result: data,
-    isLoading
+    isFetching
   };
 };
