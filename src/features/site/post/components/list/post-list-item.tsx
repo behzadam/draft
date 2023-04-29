@@ -11,7 +11,9 @@ export const PostListItem = ({
   return (
     <article className="py-4">
       <h3>
-        <Link href="#">{post.title}</Link>
+        <Link href={`/post/${post.slug}`}>
+          {post.title}
+        </Link>
       </h3>
       <div className="text-xs text-gray-600">
         {post.createdAt}
