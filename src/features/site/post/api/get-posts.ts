@@ -9,16 +9,14 @@ export const getPosts = (): Promise<Result<Post[]>> => {
 };
 
 export const useGetPosts = () => {
-  const { data, isLoading } = useQuery<Result<Post[]>>({
+  const { data, isFetching } = useQuery<Result<Post[]>>({
     queryKey: ['posts'],
     queryFn: getPosts,
-    initialData: Result.success({
-      data: [] as Post[]
-    })
+    initialData: Result.success({ data: [] as Post[] })
   });
 
   return {
     result: data,
-    isLoading
+    isFetching
   };
 };

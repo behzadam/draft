@@ -14,6 +14,7 @@ const models = {
     id: primaryKey(String),
     title: String,
     content: String,
+    slug: String,
     userId: String,
     createdAt: String,
     updatedAt: String

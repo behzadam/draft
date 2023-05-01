@@ -8,7 +8,6 @@ export const getPosts = rest.get(
   (_, res, ctx) => {
     const posts = db.post.getAll();
     const result = Result.success({ data: posts });
-    console.log({ posts });
     return res(
       ctx.status(200),
       ctx.delay(300),

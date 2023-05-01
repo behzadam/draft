@@ -1,4 +1,7 @@
-import { Post } from '@/features/site/post';
+import {
+  Post,
+  PostDetailsDto
+} from '@/features/site/post';
 import { faker } from '@faker-js/faker';
 
 export const users = [
@@ -17,6 +20,7 @@ function createRandomPost(userId: string): Post {
     id: faker.datatype.uuid(),
     title: faker.lorem.sentence(),
     content: faker.lorem.paragraphs(4),
+    slug: faker.lorem.slug(),
     userId: userId,
     createdAt: faker.date.recent().toISOString(),
     updatedAt: faker.date.recent().toISOString()
@@ -26,3 +30,13 @@ function createRandomPost(userId: string): Post {
 export const posts = Array.from({ length: 40 }).map(() => {
   return createRandomPost(users[0].id);
 });
+
+export function createRandomPostDetails(): PostDetailsDto {
+  return {
+    id: faker.datatype.uuid(),
+    title: faker.lorem.sentence(),
+    content: faker.lorem.paragraphs(4),
+    slug: faker.lorem.slug(),
+    createdAt: faker.date.recent().toISOString()
+  };
+}

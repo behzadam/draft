@@ -1,7 +1,7 @@
 import { IS_SERVER } from '@/config/constants';
 import { seedMockDb } from './seeder';
 
-const initMocks = () => {
+export const initMocks = () => {
   if (IS_SERVER) {
     require('./server');
   } else {
@@ -9,5 +9,3 @@ const initMocks = () => {
   }
   seedMockDb();
 };
-
-initMocks();

@@ -8,7 +8,9 @@ import { handlers } from '../src/testing/mocks/handlers';
 import { seedMockDb } from '../src/testing/mocks/seeder';
 import { withAppProviders } from './decorators';
 
-mswInitialize();
+mswInitialize({
+  onUnhandledRequest: 'bypass'
+});
 seedMockDb();
 
 const preview: Preview = {
@@ -22,15 +24,12 @@ const preview: Preview = {
     },
     nextjs: {
       appDirectory: true
+    },
+    msw: {
+      handlers: handlers
     }
   },
   decorators: [withAppProviders, mswDecorator]
-};
-
-preview.parameters = {
-  msw: {
-    handlers: handlers
-  }
 };
 
 export default preview;

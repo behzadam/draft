@@ -1,9 +1,7 @@
-export type Post = {
+export type PostDetailsDto = {
   id: string;
   title: string;
   content: string;
   slug: string;
-  userId: string;
   createdAt: string;
-  updatedAt: string;
 };

@@ -8,4 +8,4 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-export const Site: Story = {};
+export const Posts: Story = {};
