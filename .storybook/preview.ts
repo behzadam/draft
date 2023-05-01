@@ -24,15 +24,12 @@ const preview: Preview = {
     },
     nextjs: {
       appDirectory: true
+    },
+    msw: {
+      handlers: handlers
     }
   },
   decorators: [withAppProviders, mswDecorator]
-};
-
-preview.parameters = {
-  msw: {
-    handlers: handlers
-  }
 };
 
 export default preview;
