@@ -1,3 +1,4 @@
+import { posts } from '@/testing/mocks/data';
 import type { Meta, StoryObj } from '@storybook/react';
 import PagePostDetails from './page';
 
@@ -11,7 +12,7 @@ type Story = StoryObj<typeof meta>;
 export const PostDetail: Story = {
   args: {
     params: {
-      slug: 'page-detail'
+      slug: posts[0].slug
     }
   }
 };
