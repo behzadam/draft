@@ -4,16 +4,16 @@ import { Result } from '@/types';
 import { useQuery } from '@tanstack/react-query';
 import { PostDetailsDto } from '../types/post-details-dto';
 
-export const getPostDetails = (
+export const getPostsDetails = (
   slug: string
 ): Promise<Result<PostDetailsDto>> => {
   return apiClient.get(`${API_URL}/posts/${slug}`);
 };
 
-export const useGetPostDetails = (slug: string) => {
+export const useGetPostsDetails = (slug: string) => {
   const { data, isFetching } = useQuery({
     queryKey: ['posts', slug],
-    queryFn: () => getPostDetails(slug),
+    queryFn: () => getPostsDetails(slug),
     enabled: !!slug
   });
 

@@ -1,7 +1,7 @@
 import { API_URL } from '@/config/constants';
+import { db } from '@/testing/mocks/db';
 import { Result } from '@/types';
 import { rest } from 'msw';
-import { db } from '../../db';
 
 export const getPosts = rest.get(
   `${API_URL}/posts`,

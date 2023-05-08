@@ -1,12 +1,14 @@
 // api
-export * from './api/get-post-details';
 export * from './api/get-posts';
+export * from './api/get-posts-details';
 // components
 export * from './components/detail/post-details';
 export * from './components/detail/post-details.skeleton';
 export * from './components/list/post-list';
 export * from './components/list/post-list-item';
 export * from './components/list/post-list.skeleton';
+// mocks
+export * from './mocks';
 // types
 export * from './types/post';
 export * from './types/post-details-dto';

@@ -4,7 +4,7 @@ import { Show } from '@/components/show';
 import {
   PostDetails,
   PostDetailsSkeleton,
-  useGetPostDetails
+  useGetPostsDetails
 } from '@/features/site/post';
 
 export default function PostDetailsPage({
@@ -12,7 +12,7 @@ export default function PostDetailsPage({
 }: {
   params: { slug: string };
 }) {
-  const { result, isFetching } = useGetPostDetails(
+  const { result, isFetching } = useGetPostsDetails(
     params.slug
   );
 

@@ -1,14 +1,13 @@
 import { API_URL } from '@/config/constants';
-import { PostDetailsDto } from '@/features/site/post';
+import { db } from '@/testing/mocks/db';
 import { Result } from '@/types';
 import { rest } from 'msw';
-import { db } from '../../db';
+import { PostDetailsDto } from '../types/post-details-dto';
 
 export const getPostDetails = rest.get(
   `${API_URL}/posts/:slug`,
   async (req, res, ctx) => {
     const slug = req.params.slug as string;
-    console.log({ slug });
     const post = db.post.findFirst({
       where: {
         slug: {
@@ -36,7 +35,6 @@ export const getPostDetails = rest.get(
       createdAt: post.createdAt
     };
 
-    console.log({ slug, post });
     const result = Result.success({ data: postDetails });
     return res(
       ctx.status(200),
