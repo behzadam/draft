@@ -5,8 +5,11 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true,
-      "source.fixAll.format": true,
-      "source.organizeImports": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.format": true,
+    "source.organizeImports": true
+  },
+  "material-icon-theme.files.associations": {
+    "*.skeleton.tsx": "Mjml"
   }
 }
