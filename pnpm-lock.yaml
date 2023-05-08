@@ -46,6 +46,9 @@ dependencies:
   typescript:
     specifier: 5.0.4
     version: 5.0.4
+  yotils:
+    specifier: ^1.0.5
+    version: 1.0.5
 
 devDependencies:
   '@faker-js/faker':
@@ -12436,3 +12439,7 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  /yotils@1.0.5:
+    resolution: {integrity: sha512-2PH6TwP9wsY9CSWiPTWn/KHhn7YqlbBUHvyEOGPU5NKr7xiHIs9pBv0PaWpLWNe94MdsRcXEfGb++3eeQk0+Zw==}
+    dev: false
