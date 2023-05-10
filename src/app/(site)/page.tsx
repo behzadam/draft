@@ -1,21 +1,15 @@
-'use client';
-
 import {
+  POST_LIST_QUERY_KEY,
   PostList,
-  PostListSkeleton,
-  useGetPosts
+  getPosts
 } from '@/features/site/post';
+import { getQueryClient } from '@/lib/react-query';
 
-export default function Site() {
-  const { result, isFetching } = useGetPosts();
-  return (
-    <section className="grid max-w-md grid-cols-1 mx-auto divide-y divide-gray-100">
-      <h1 className="py-6 text-xl font-bold">Posts</h1>
-      {isFetching ? (
-        <PostListSkeleton />
-      ) : (
-        <PostList posts={result?.data!} />
-      )}
-    </section>
+export default async function Site() {
+  const queryClient = getQueryClient();
+  await queryClient.prefetchQuery(
+    [POST_LIST_QUERY_KEY],
+    getPosts
   );
+  return <PostList />;
 }
