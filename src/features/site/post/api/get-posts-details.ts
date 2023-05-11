@@ -3,6 +3,7 @@ import { apiClient } from '@/lib/api-client';
 import { Result } from '@/types';
 import { useQuery } from '@tanstack/react-query';
 import { isDefined } from 'yotils';
+import { POST_LIST_QUERY_KEY } from '../constants';
 import { PostDetailsDto } from '../types/post-details-dto';
 
 export const getPostsDetails = (
@@ -13,7 +14,7 @@ export const getPostsDetails = (
 
 export const useGetPostsDetails = (slug: string) => {
   const { data, isFetching } = useQuery({
-    queryKey: ['posts', slug],
+    queryKey: [POST_LIST_QUERY_KEY, slug],
     queryFn: () => getPostsDetails(slug),
     enabled: isDefined(slug)
   });

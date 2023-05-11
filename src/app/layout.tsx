@@ -1,5 +1,4 @@
 import { MSWWrapper } from '@/lib/msw-wrapper';
-import { Suspense } from 'react';
 import './globals.css';
 import { AppProviders } from './providers';
 
@@ -17,11 +16,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Suspense fallback={<p>Layout fallback...</p>}>
-          <AppProviders>
-            <MSWWrapper>{children}</MSWWrapper>
-          </AppProviders>
-        </Suspense>
+        <AppProviders>
+          <MSWWrapper>{children}</MSWWrapper>
+        </AppProviders>
       </body>
     </html>
   );

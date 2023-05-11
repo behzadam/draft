@@ -2,6 +2,7 @@ import { API_URL } from '@/config/constants';
 import { apiClient } from '@/lib/api-client';
 import { Result } from '@/types';
 import { useQuery } from '@tanstack/react-query';
+import { POST_LIST_QUERY_KEY } from '../constants';
 import { Post } from '../types/post';
 
 export const getPosts = (): Promise<Result<Post[]>> => {
@@ -10,9 +11,8 @@ export const getPosts = (): Promise<Result<Post[]>> => {
 
 export const useGetPosts = () => {
   const { data, isFetching } = useQuery<Result<Post[]>>({
-    queryKey: ['posts'],
-    queryFn: getPosts,
-    initialData: Result.success({ data: [] as Post[] })
+    queryKey: [POST_LIST_QUERY_KEY],
+    queryFn: getPosts
   });
 
   return {
