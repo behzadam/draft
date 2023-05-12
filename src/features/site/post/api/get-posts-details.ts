@@ -13,14 +13,14 @@ export const getPostsDetails = (
 };
 
 export const useGetPostsDetails = (slug: string) => {
-  const { data, isFetching } = useQuery({
+  const { data: result, isFetching } = useQuery({
     queryKey: [POST_LIST_QUERY_KEY, slug],
     queryFn: () => getPostsDetails(slug),
     enabled: isDefined(slug)
   });
 
   return {
-    result: data,
+    result,
     isFetching
   };
 };
