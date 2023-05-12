@@ -10,13 +10,13 @@ export const getPosts = (): Promise<Result<Post[]>> => {
 };
 
 export const useGetPosts = () => {
-  const { data, isFetching } = useQuery<Result<Post[]>>({
+  const { data: result, isFetching } = useQuery({
     queryKey: [POST_LIST_QUERY_KEY],
     queryFn: getPosts
   });
 
   return {
-    result: data,
+    result,
     isFetching
   };
 };
