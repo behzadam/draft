@@ -8,7 +8,8 @@ export const getQueryClient = cache(
         queries: {
           retry: false,
           refetchOnWindowFocus: false,
-          useErrorBoundary: true
+          useErrorBoundary: true,
+          staleTime: 5000
         }
       }
     })
