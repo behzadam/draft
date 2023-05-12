@@ -6,6 +6,11 @@ import {
 import { getQueryClient } from '@/lib/react-query';
 import { Hydrate, dehydrate } from '@tanstack/react-query';
 
+export const metadata = {
+  title: 'Draft | Post List',
+  description: 'Post list page.'
+};
+
 export default async function Site() {
   const queryClient = getQueryClient();
   await queryClient.prefetchQuery(
