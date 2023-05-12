@@ -1,14 +1,29 @@
-import { PostDetailsDto } from '../../types/post-details-dto';
+'use client';
+
+import { Show } from '@/components/show';
+import { useGetPostsDetails } from '../../api/get-posts-details';
+import { PostDetailsSkeleton } from './post-details.skeleton';
 
 type Props = {
-  post: PostDetailsDto;
+  slug: string;
 };
-export const PostDetails = ({ post }: Props) => {
+export const PostDetails = ({ slug }: Props) => {
+  const { result, isFetching } = useGetPostsDetails(slug);
+
   return (
-    <article className="prose xl:prose-xl">
-      <h2>{post.title}</h2>
-      <time className="text">{post.createdAt}</time>
-      <section>{post.content}</section>
-    </article>
+    <>
+      <Show when={isFetching}>
+        <PostDetailsSkeleton />
+      </Show>
+      <Show when={!isFetching && result}>
+        <article className="prose xl:prose-xl">
+          <h2>{result?.data?.title}</h2>
+          <time className="text">
+            {result?.data?.createdAt}
+          </time>
+          <section>{result?.data?.content}</section>
+        </article>
+      </Show>
+    </>
   );
 };
