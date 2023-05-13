@@ -1,6 +1,6 @@
-import { factory, manyOf, primaryKey } from '@mswjs/data';
+import { manyOf, primaryKey } from '@mswjs/data';
 
-const models = {
+export const models = {
   user: {
     id: primaryKey(String),
     name: String,
@@ -20,5 +20,3 @@ const models = {
     updatedAt: String
   }
 };
-
-export const db = factory(models);
