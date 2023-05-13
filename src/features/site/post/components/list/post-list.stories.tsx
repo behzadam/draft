@@ -1,4 +1,3 @@
-import { posts } from '@/testing/mocks/data';
 import type { Meta, StoryObj } from '@storybook/react';
 import { PostList } from './post-list';
 
@@ -9,14 +8,4 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-export const PostListWithValues: Story = {
-  args: {
-    posts: posts
-  }
-};
-
-export const PostListWithEmptyArray: Story = {
-  args: {
-    posts: []
-  }
-};
+export const PostListWithClientFetch: Story = {};
