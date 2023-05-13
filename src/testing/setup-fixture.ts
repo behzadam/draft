@@ -2,12 +2,12 @@ import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
 
 import { getQueryClient } from '@/lib/react-query';
-import { seedMockDb } from '@/testing/mocks/seeder';
+import { seedDatabase } from '@/testing/database/seeder';
 import { server } from '@/testing/mocks/server';
 
 beforeAll(() => {
   server.listen({ onUnhandledRequest: 'error' });
-  seedMockDb();
+  seedDatabase();
 });
 
 afterAll(() => server.close());
