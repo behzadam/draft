@@ -2,7 +2,7 @@
 
 import { useGetPosts } from '../../api/get-posts';
 import { PostListItem } from './post-list-item';
-import { PostListSkeleton } from './post-list.skeleton';
+import { PostListSkeleton } from './post-list-skeleton';
 
 export const PostList = (): JSX.Element => {
   const { result, isFetching } = useGetPosts();

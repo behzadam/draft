@@ -4,7 +4,6 @@ import {
   getPosts
 } from '@/features/site/post';
 import { getQueryClient } from '@/lib/react-query';
-import { Hydrate, dehydrate } from '@tanstack/react-query';
 
 export const metadata = {
   title: 'Draft | Post List',
@@ -17,11 +16,5 @@ export default async function Site() {
     [POST_LIST_QUERY_KEY],
     getPosts
   );
-  const dehydratedState = dehydrate(queryClient);
-
-  return (
-    <Hydrate state={dehydratedState}>
-      <PostList />
-    </Hydrate>
-  );
+  return <PostList />;
 }

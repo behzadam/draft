@@ -1,5 +1,5 @@
 import { API_URL } from '@/config/constants';
-import { db } from '@/testing/mocks/db';
+import { db } from '@/testing/database/factory';
 import { Result } from '@/types';
 import { rest } from 'msw';
 import { PostDetailsDto } from '../types/post-details-dto';

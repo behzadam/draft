@@ -3,7 +3,6 @@ import {
   getPostsDetails
 } from '@/features/site/post';
 import { getQueryClient } from '@/lib/react-query';
-import { Hydrate, dehydrate } from '@tanstack/react-query';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({
@@ -31,11 +30,5 @@ export default async function Page({
     ['posts', params.slug],
     () => getPostsDetails(params.slug)
   );
-  const dehydratedState = dehydrate(queryClient);
-
-  return (
-    <Hydrate state={dehydratedState}>
-      <PostDetails slug={params.slug} />
-    </Hydrate>
-  );
+  return <PostDetails slug={params.slug} />;
 }

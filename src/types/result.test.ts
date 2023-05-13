@@ -1,4 +1,4 @@
-import { posts } from '@/testing/mocks/data';
+import { randomPosts } from '@/testing/data-generator';
 import { Pagination } from './pagination';
 import {
   MESSAGE_FAILURE,
@@ -9,12 +9,12 @@ import {
 describe('Result', () => {
   describe('Result.success', () => {
     it('returns response with default success message', () => {
-      const result = Result.success({ data: posts });
+      const result = Result.success({ data: randomPosts });
       expect(result).toEqual({
         errors: [],
         message: MESSAGE_SUCCESS,
         success: true,
-        data: posts,
+        data: randomPosts,
         meta: null
       } satisfies Result);
     });
@@ -22,14 +22,14 @@ describe('Result', () => {
     it('returns response with custom message', () => {
       const customMessage = 'custom message';
       const result = Result.success({
-        data: posts,
+        data: randomPosts,
         message: customMessage
       });
       expect(result).toEqual({
         errors: [],
         message: customMessage,
         success: true,
-        data: posts,
+        data: randomPosts,
         meta: null
       } satisfies Result);
     });
@@ -52,14 +52,14 @@ describe('Result', () => {
         take: 10
       });
       const result = Result.success({
-        data: posts,
+        data: randomPosts,
         meta: pagination
       });
       expect(result).toEqual({
         errors: [],
         message: MESSAGE_SUCCESS,
         success: true,
-        data: posts,
+        data: randomPosts,
         meta: {
           page: pagination.page,
           take: pagination.take,
