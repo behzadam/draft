@@ -1,18 +1,15 @@
 import { IS_SERVER } from '@/config/constants';
-import { setupWorker } from 'msw';
-import { setupServer } from 'msw/node';
-import { handlers } from './handlers';
-import { seedMockDb } from './seeder';
+import { seedDatabase } from '../database/seeder';
+import { worker } from './browser';
+import { server } from './server';
 
 export const initMocks = () => {
   if (IS_SERVER) {
-    const server = setupServer(...handlers);
     server.listen();
   } else {
-    const worker = setupWorker(...handlers);
     worker.start({
       onUnhandledRequest: 'bypass'
     });
   }
-  seedMockDb();
+  seedDatabase();
 };
