@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PostDetailsSkeleton as Skeleton } from './post-details.skeleton';
+import { PostListSkeleton as Skeleton } from './post-list-skeleton';
 
 const meta = {
-  title: 'Features/Post/Details',
+  title: 'Features/Post/List',
   component: Skeleton
 } satisfies Meta<typeof Skeleton>;
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-export const PostDetailsSkeleton: Story = {};
+export const PostListSkeleton: Story = {};
