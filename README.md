@@ -10,7 +10,7 @@ Next.js Application Architecture ( coming soon )
 - Authentication / Authorization
 - Mock Service Worker ( API Mocking )
 - React Testing Library
-- Cypress ( End-to-end Testing )
+- Playwright ( End-to-end Testing )
 - Husky ( Git Hook )
 - Lint-staged
 - Prettier
