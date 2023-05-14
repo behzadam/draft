@@ -1,5 +1,6 @@
 'use client';
 
+import { ShowUntil } from '@/components/show';
 import { Lato } from 'next/font/google';
 import { useGetPosts } from '../../api/get-posts';
 import { PostListItem } from './post-list-item';
@@ -25,15 +26,16 @@ export const PostList = (): JSX.Element => {
         </h1>
       </header>
       <section className="divide-y divide-gray-100">
-        {isFetching ? (
-          <PostListSkeleton />
-        ) : (
-          result?.data?.map((post) => {
+        <ShowUntil
+          show={<PostListSkeleton />}
+          until={isFetching}
+        >
+          {result?.data?.map((post) => {
             return (
               <PostListItem post={post} key={post.id} />
             );
-          })
-        )}
+          })}
+        </ShowUntil>
       </section>
     </section>
   );
