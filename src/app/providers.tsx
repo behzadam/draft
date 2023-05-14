@@ -7,6 +7,7 @@ import {
   dehydrate
 } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { NextIntlProvider } from 'next-intl';
 import { ReactNode, useState } from 'react';
 
 type Props = {
@@ -16,9 +17,13 @@ export const AppProviders = ({ children }: Props) => {
   const [queryClient] = useState(getQueryClient());
   const dehydratedState = dehydrate(queryClient);
   return (
-    <QueryClientProvider client={queryClient}>
-      <Hydrate state={dehydratedState}>{children}</Hydrate>
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <NextIntlProvider locale="en">
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={dehydratedState}>
+          {children}
+        </Hydrate>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </NextIntlProvider>
   );
 };
