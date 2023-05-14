@@ -1,6 +1,6 @@
 export const PostDetailsSkeleton = () => {
   return (
-    <div className="w-full py-4 mx-auto">
+    <div className="container max-w-screen-md py-4">
       <div className="flex space-x-4 animate-pulse">
         <div className="flex-1 py-1 space-y-3">
           <div className="h-8 rounded bg-slate-400"></div>
