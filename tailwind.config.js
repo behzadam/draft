@@ -25,7 +25,10 @@ module.exports = {
       }
     },
     container: {
-      center: true
+      center: true,
+      padding: {
+        DEFAULT: '1rem'
+      }
     }
   },
   plugins: [require('@tailwindcss/typography')]
