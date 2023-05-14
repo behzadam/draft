@@ -1,6 +1,6 @@
 'use client';
 
-import { useFormatter } from 'next-intl';
+import { DateRelative } from '@/components/date';
 import Link from 'next/link';
 import { Post } from '../../types/post';
 
@@ -11,14 +11,9 @@ type Props = {
 export const PostListItem = ({
   post
 }: Props): JSX.Element => {
-  const format = useFormatter();
-  const dateTime = new Date(post.createdAt);
-  const now = new Date();
   return (
     <article className="py-8">
-      <time className="text-xs text-gray-600">
-        {format.relativeTime(dateTime, now)}
-      </time>
+      <DateRelative date={post.createdAt} />
       <h3>
         <Link href={`/post/${post.slug}`}>
           {post.title}
