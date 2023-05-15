@@ -3,7 +3,7 @@ import { db } from '@/testing/database/factory';
 import { Result } from '@/types';
 import { rest } from 'msw';
 
-export const getPosts = rest.get(
+export const getPostsHandler = rest.get(
   `${API_URL}/posts`,
   (_, res, ctx) => {
     const posts = db.post.getAll();
