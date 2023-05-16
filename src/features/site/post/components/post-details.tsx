@@ -1,7 +1,7 @@
 'use client';
 
 import { DateRelative } from '@/components/date';
-import { useGetPostsDetails } from '../../api/get-posts-details';
+import { useGetPostsDetails } from '../api/get-posts-details';
 import { PostDetailsSkeleton } from './post-details-skeleton';
 
 type Props = {

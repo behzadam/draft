@@ -2,16 +2,16 @@
 
 import { ShowUntil } from '@/components/show';
 import { Lato } from 'next/font/google';
-import { useGetPosts } from '../../api/get-posts';
+import { useGetPosts } from '../api/get-posts';
 import { PostListItem } from './post-list-item';
 import { PostListSkeleton } from './post-list-skeleton';
 
-export const subHeadingFont = Lato({
+const subHeadingFont = Lato({
   subsets: ['latin'],
   weight: '300'
 });
 
-export const PostList = (): JSX.Element => {
+export const PostList = () => {
   const { result, isFetching } = useGetPosts();
   return (
     <section className="container grid max-w-screen-lg grid-cols-1">

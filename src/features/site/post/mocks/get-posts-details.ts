@@ -4,7 +4,7 @@ import { Result } from '@/types';
 import { rest } from 'msw';
 import { PostDetailsDto } from '../types/post-details-dto';
 
-export const getPostDetails = rest.get(
+export const getPostDetailsHandler = rest.get(
   `${API_URL}/posts/:slug`,
   async (req, res, ctx) => {
     const slug = req.params.slug as string;

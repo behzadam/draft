@@ -1,4 +1,7 @@
-import { getPosts } from './get-posts';
-import { getPostDetails } from './get-posts-details';
+import { getPostsHandler } from './get-posts';
+import { getPostDetailsHandler } from './get-posts-details';
 
-export const postsHandlers = [getPosts, getPostDetails];
+export const postsHandlers = [
+  getPostsHandler,
+  getPostDetailsHandler
+];
