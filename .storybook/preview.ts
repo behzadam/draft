@@ -4,14 +4,15 @@ import {
   initialize as mswInitialize
 } from 'msw-storybook-addon';
 import '../src/app/globals.css';
+import { seedDatabase } from '../src/testing/database/seeder';
 import { handlers } from '../src/testing/mocks/handlers';
-import { seedMockDb } from '../src/testing/mocks/seeder';
 import { withAppProviders } from './decorators';
 
 mswInitialize({
   onUnhandledRequest: 'bypass'
 });
-seedMockDb();
+
+seedDatabase();
 
 const preview: Preview = {
   parameters: {
