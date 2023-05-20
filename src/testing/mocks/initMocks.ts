@@ -1,12 +1,12 @@
 import { IS_SERVER } from '@/config/constants';
 import { seedDatabase } from '../database/seeder';
-import { worker } from './browser';
-import { server } from './server';
 
 export const initMocks = () => {
   if (IS_SERVER) {
+    const { server } = require('./server');
     server.listen();
   } else {
+    const { worker } = require('./browser');
     worker.start({
       onUnhandledRequest: 'bypass'
     });
