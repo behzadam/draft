@@ -1,5 +1,4 @@
 import { QueryClient } from '@tanstack/react-query';
-import { cache } from 'react';
 
 export const reactQueryOptions = {
   defaultOptions: {
@@ -12,6 +11,6 @@ export const reactQueryOptions = {
   }
 };
 
-export const getQueryClient = cache(
-  () => new QueryClient(reactQueryOptions)
-);
+const getQueryClient = () =>
+  new QueryClient(reactQueryOptions);
+export default getQueryClient;
