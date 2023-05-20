@@ -2,7 +2,7 @@ import { API_URL } from '@/config/constants';
 import { db } from '@/testing/database/factory';
 import { Result } from '@/types';
 import { rest } from 'msw';
-import { PostDetailDto } from '../types/post-details-dto';
+import { PostDetailDto } from '../types/post-detail-dto';
 
 export const getPostDetailHandler = rest.get(
   `${API_URL}/posts/:slug`,
