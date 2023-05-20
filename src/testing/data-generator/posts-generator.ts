@@ -1,8 +1,8 @@
-import { Post } from '@/features/site/post';
+import { PostListItemDto } from '@/features/post-list';
 import { faker } from '@faker-js/faker';
 import { admin } from './users-generators';
 
-function generateRandomPost(): Post {
+function generateRandomPost(): PostListItemDto {
   return {
     id: faker.datatype.uuid(),
     title: faker.lorem.sentence(),
