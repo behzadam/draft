@@ -2,10 +2,10 @@
 
 import { DateRelative } from '@/components/date';
 import Link from 'next/link';
-import { Post } from '../types/post';
+import { PostListItemDto } from '../types/post-list-item-dto';
 
 type Props = {
-  post: Post;
+  post: PostListItemDto;
 };
 
 export const PostListItem = ({
