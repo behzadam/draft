@@ -1,8 +1,8 @@
-import { PostDetailsDto } from '@/features/site/post';
+import { PostDetailDto } from '@/features/post-detail';
 import { db } from '../database/factory';
 import { admin } from './users-generators';
 
-export function getCurrentUserFirstPostDetails(): PostDetailsDto | null {
+export function getCurrentUserFirstPostDetails(): PostDetailDto | null {
   const post = db.post.findFirst({
     where: {
       userId: {
