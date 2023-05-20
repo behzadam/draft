@@ -1,18 +1,18 @@
 'use client';
 
 import { DateRelative } from '@/components/date';
-import { useGetPostsDetails } from '../api/get-posts-details';
-import { PostDetailsSkeleton } from './post-details-skeleton';
+import { useGetPostDetail } from '../hooks/use-get-post-detail';
+import { PostDetailSkeleton } from './post-detail-skeleton';
 
 type Props = {
   slug: string;
 };
-export const PostDetails = ({ slug }: Props) => {
-  const { result, isFetching } = useGetPostsDetails(slug);
+export const PostDetail = ({ slug }: Props) => {
+  const { result, isFetching } = useGetPostDetail(slug);
   return (
     <>
       {isFetching ? (
-        <PostDetailsSkeleton />
+        <PostDetailSkeleton />
       ) : (
         result?.data && (
           <article className="container prose xl:prose-xl">

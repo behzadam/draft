@@ -1,4 +1,5 @@
-import { MSWWrapper } from '@/lib/msw-wrapper';
+import { API_MOCKING } from '@/config/constants';
+import { initMocks } from '@/testing/mocks/initMocks';
 import { Croissant_One } from 'next/font/google';
 import './globals.css';
 import { AppProviders } from './providers';
@@ -15,6 +16,10 @@ const headingFont = Croissant_One({
   variable: '--font-heading'
 });
 
+if (API_MOCKING) {
+  initMocks();
+}
+
 export default async function RootLayout({
   children
 }: {
@@ -23,9 +28,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${headingFont.variable}`}>
       <body>
-        <AppProviders>
-          <MSWWrapper>{children}</MSWWrapper>
-        </AppProviders>
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );

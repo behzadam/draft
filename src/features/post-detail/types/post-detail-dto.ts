@@ -1,4 +1,4 @@
-export type PostDetailsDto = {
+export type PostDetailDto = {
   id: string;
   title: string;
   content: string;

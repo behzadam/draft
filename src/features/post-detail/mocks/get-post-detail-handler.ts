@@ -2,9 +2,9 @@ import { API_URL } from '@/config/constants';
 import { db } from '@/testing/database/factory';
 import { Result } from '@/types';
 import { rest } from 'msw';
-import { PostDetailsDto } from '../types/post-details-dto';
+import { PostDetailDto } from '../types/post-details-dto';
 
-export const getPostDetailsHandler = rest.get(
+export const getPostDetailHandler = rest.get(
   `${API_URL}/posts/:slug`,
   async (req, res, ctx) => {
     const slug = req.params.slug as string;
@@ -27,7 +27,7 @@ export const getPostDetailsHandler = rest.get(
       );
     }
 
-    const postDetails: PostDetailsDto = {
+    const postDetails: PostDetailDto = {
       id: post.id,
       title: post.title,
       content: post.content,

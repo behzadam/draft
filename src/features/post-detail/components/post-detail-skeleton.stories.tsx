@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PostDetailsSkeleton as Skeleton } from './post-details-skeleton';
+import { PostDetailSkeleton as Skeleton } from './post-detail-skeleton';
 
 const meta = {
   title: 'Features/Post/Details',

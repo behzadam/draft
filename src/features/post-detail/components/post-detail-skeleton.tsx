@@ -1,4 +1,4 @@
-export const PostDetailsSkeleton = () => {
+export const PostDetailSkeleton = () => {
   return (
     <div className="container max-w-screen-md py-4">
       <div className="flex space-x-4 animate-pulse">

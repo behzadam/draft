@@ -1,20 +1,21 @@
-import {
-  POST_LIST_QUERY_KEY,
-  PostList,
-  getPosts
-} from '@/features/site/post';
-import { getQueryClient } from '@/lib/react-query';
+import { getPosts } from '@/features/post-list';
+import { PostList } from '@/features/post-list/client';
+import getQueryClient from '@/lib/react-query';
+import { Hydrate, dehydrate } from '@tanstack/react-query';
 
 export const metadata = {
   title: 'Draft | Post List',
   description: 'Post list page.'
 };
 
-export default async function Site() {
+export default async function Page() {
   const queryClient = getQueryClient();
-  await queryClient.prefetchQuery(
-    [POST_LIST_QUERY_KEY],
-    getPosts
+  await queryClient.prefetchQuery(['posts'], getPosts);
+  const dehydratedState = dehydrate(queryClient);
+
+  return (
+    <Hydrate state={dehydratedState}>
+      <PostList />
+    </Hydrate>
   );
-  return <PostList />;
 }

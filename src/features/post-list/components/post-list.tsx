@@ -2,7 +2,7 @@
 
 import { ShowUntil } from '@/components/show';
 import { Lato } from 'next/font/google';
-import { useGetPosts } from '../api/get-posts';
+import { useGetPosts } from '../hooks/use-get-posts';
 import { PostListItem } from './post-list-item';
 import { PostListSkeleton } from './post-list-skeleton';
 

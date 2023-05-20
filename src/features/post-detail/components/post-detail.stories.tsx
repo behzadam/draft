@@ -1,13 +1,13 @@
 import { getCurrentUserFirstPostDetails } from '@/testing/data-generator';
 import type { Meta, StoryObj } from '@storybook/react';
-import { PostDetails } from './post-details';
+import { PostDetail } from './post-detail';
 
 const post = getCurrentUserFirstPostDetails();
 
 const meta = {
   title: 'Features/Post/Details',
-  component: PostDetails
-} satisfies Meta<typeof PostDetails>;
+  component: PostDetail
+} satisfies Meta<typeof PostDetail>;
 export default meta;
 
 type Story = StoryObj<typeof meta>;

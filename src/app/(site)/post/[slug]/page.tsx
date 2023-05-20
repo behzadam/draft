@@ -1,8 +1,7 @@
-import {
-  PostDetails,
-  getPostsDetails
-} from '@/features/site/post';
-import { getQueryClient } from '@/lib/react-query';
+import { getPostDetail } from '@/features/post-detail';
+import { PostDetail } from '@/features/post-detail/client';
+import getQueryClient from '@/lib/react-query';
+import { Hydrate, dehydrate } from '@tanstack/react-query';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({
@@ -10,7 +9,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  // const result = await getPostsDetails(params.slug);
+  // const result = await getPostDetail(params.slug);
   // return {
   //   title: result?.data?.title,
   //   description: result?.data?.title
@@ -28,7 +27,13 @@ export default async function Page({
   const queryClient = getQueryClient();
   await queryClient.prefetchQuery(
     ['posts', params.slug],
-    () => getPostsDetails(params.slug)
+    () => getPostDetail(params.slug)
   );
-  return <PostDetails slug={params.slug} />;
+  const dehydratedState = dehydrate(queryClient);
+
+  return (
+    <Hydrate state={dehydratedState}>
+      <PostDetail slug={params.slug} />;
+    </Hydrate>
+  );
 }
