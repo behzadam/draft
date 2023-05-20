@@ -8,7 +8,7 @@
     "no-restricted-imports": [
       "error",
       {
-        "patterns": ["@/features/../*", "@/components/*/*"]
+        "patterns": ["@/components/*/*"]
       }
     ],
     "import/no-cycle": "error"
